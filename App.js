@@ -1,11 +1,12 @@
 // تهيئة Firebase
 const firebaseConfig = {
-    apiKey: "your-api-key",
-    authDomain: "your-auth-domain",
-    projectId: "your-project-id",
-    storageBucket: "your-storage-bucket",
-    messagingSenderId: "your-sender-id",
-    appId: "your-app-id"
+  apiKey: "AIzaSyDLMwJ_ogu1xlwOeiV8pdjk2MsF5fA3i3I",
+  authDomain: "adapp-33fda.firebaseapp.com",
+  projectId: "adapp-33fda",
+  storageBucket: "adapp-33fda.firebasestorage.app",
+  messagingSenderId: "915775817893",
+  appId: "1:915775817893:web:9087f530b5fd23d3dde54c",
+ 
 };
 
 firebase.initializeApp(firebaseConfig);
