@@ -1,0 +1,51 @@
+{
+    "users": {
+        "userId": {
+            "name": "اسم المستخدم",
+            "email": "example@email.com",
+            "points": 0,
+            "balance": 0.00,
+            "createdAt": "timestamp",
+            "lastLogin": "timestamp",
+            "referralCode": "ABC123",
+            "referredBy": "userId",
+            "deviceInfo": {
+                "platform": "Android/iOS",
+                "version": "1.0.0"
+            }
+        }
+    },
+    "adViews": {
+        "viewId": {
+            "userId": "userId",
+            "adId": "adId",
+            "reward": 50,
+            "timestamp": "timestamp",
+            "adType": "video/interstitial/rewarded"
+        }
+    },
+    "withdrawals": {
+        "withdrawalId": {
+            "userId": "userId",
+            "amount": 10.00,
+            "status": "pending/completed/rejected",
+            "timestamp": "timestamp",
+            "paymentMethod": "PayPal/Bank/GiftCard",
+            "paymentDetails": {
+                "email": "payment@email.com",
+                "accountNumber": "xxxx"
+            }
+        }
+    },
+    "dailyTasks": {
+        "taskId": {
+            "userId": "userId",
+            "taskType": "watchAds/referral/daily",
+            "progress": 0,
+            "target": 5,
+            "reward": 100,
+            "completedAt": "timestamp",
+            "expiresAt": "timestamp"
+        }
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق ربح المال من الإعلانات</title>
+    
+    <!-- الأنماط الأساسية -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- مكتبات Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- شريط التنقل -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div class="flex items-center py-4">
+                        <img src="logo.png" alt="Logo" class="h-8 w-8 ml-2">
+                        <span class="font-semibold text-gray-500 text-lg">تطبيق الربح</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <a href="#" class="py-2 px-3 font-medium text-gray-500 rounded hover:bg-blue-500 hover:text-white transition duration-300" id="loginBtn">تسجيل الدخول</a>
+                    <a href="#" class="py-2 px-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300" id="registerBtn">تسجيل جديد</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- لوحة التحكم -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- إحصائيات المستخدم -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">حسابي</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between">
+                        <span>الرصيد الحالي:</span>
+                        <span class="font-bold text-green-500" id="currentBalance">0.00$</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>النقاط المكتسبة:</span>
+                        <span class="font-bold" id="pointsEarned">0</span>
+                    </div>
+                    <button class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition duration-300" id="withdrawBtn">
+                        سحب الأرباح
+                    </button>
+                </div>
+            </div>
+
+            <!-- قسم الإعلانات -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">الإعلانات المتاحة</h2>
+                <div class="space-y-4" id="adsContainer">
+                    <!-- سيتم إضافة الإعلانات ديناميكياً -->
+                </div>
+            </div>
+
+            <!-- المهام اليومية -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">المهام اليومية</h2>
+                <div class="space-y-4" id="dailyTasksContainer">
+                    <!-- سيتم إضافة المهام ديناميكياً -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- نموذج تسجيل الدخول -->
+    <div class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" id="loginModal">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div class="mt-3 text-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">تسجيل الدخول</h3>
+                <div class="mt-2 px-7 py-3">
+                    <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" class="w-full px-3 py-2 border rounded-md">
+                    <input type="password" id="loginPassword" placeholder="كلمة المرور" class="w-full px-3 py-2 border rounded-md mt-3">
+                    <button class="w-full mt-4 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">
+                        دخول
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- النصوص البرمجية -->
+    <script src="app.js"></script>
+    <script src="auth.js"></script>
+    <script src="ads.js"></script>
+</body>
+</html>
